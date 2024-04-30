@@ -10,10 +10,10 @@ import jakarta.validation.Payload;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = TipoMovimentacaoValidator.class)
-public @interface TipoMovimentacao {
+@Constraint(validatedBy = TipoVendaValidator.class)
+public @interface TipoVenda {
 
-    String message() default "{movimentacao.tipo.message}";
+    String message() default "{venda.tipo.message}";
 
     Class<?>[] groups() default {};
 

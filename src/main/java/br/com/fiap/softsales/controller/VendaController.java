@@ -12,26 +12,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.softsales.model.Movimentacao;
-import br.com.fiap.softsales.repository.MovimentacaoRepository;
+import br.com.fiap.softsales.model.Venda;
+import br.com.fiap.softsales.repository.VendaRepository;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("movimentacao")
-public class MovimentacaoController {
+@RequestMapping("venda")
+public class VendaController {
 
     @Autowired
-    MovimentacaoRepository repository;
+    VendaRepository repository;
     
     @GetMapping
-    public List<Movimentacao> index(){
+    public List<Venda> index(){
         return repository.findAll();
     }
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public Movimentacao create(@RequestBody @Valid Movimentacao movimentacao){
-        return repository.save(movimentacao);
+    public Venda create(@RequestBody @Valid Venda venda){
+        return repository.save(venda);
     }
 
 }
